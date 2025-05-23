@@ -1,0 +1,128 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9fafb;
+    color: #333;
+    line-height: 1.5;
+    padding: 30px 0;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #005f73;
+}
+
+/* Info Box */
+.info-box p {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+/* Security Score */
+.score {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #94d2bd;
+    color: #003d33;
+    border-radius: 6px;
+    text-align: center;
+}
+
+/* Forms */
+form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="url"] {
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: 2px solid #94d2bd;
+    border-radius: 5px;
+    width: 70%;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="url"]:focus {
+    outline: none;
+    border-color: #005f73;
+}
+
+form button {
+    padding: 10px 18px;
+    background-color: #005f73;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0a9396;
+}
+
+/* Domain List */
+.domain-list {
+    list-style: none;
+    margin-top: 20px;
+    padding-left: 0;
+}
+
+.domain-list li {
+    background-color: #e0fbfc;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    color: #005f73;
+}
+
+/* Footer Links */
+.footer-links {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.footer-links a {
+    color: #0077b6;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #023047;
+}

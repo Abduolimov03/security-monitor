@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Monitoring: {{ domain }}</title>
+    <link rel="stylesheet" href="{% static 'core/style.css' %}" />
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Monitoring: {{ domain }}</h1>
+
+        <div class="info-box">
+            <p><strong>SSL Tugash Vaqti:</strong>
+                {% if ssl_expiry %}{{ ssl_expiry|date:"Y-m-d H:i" }}{% else %}Ma'lumot yo'q{% endif %}
+            </p>
+            <p><strong>Qolgan Kun:</strong>
+                {% if days_left is not None %}{{ days_left }} kun{% else %}Ma'lumot yo'q{% endif %}
+            </p>
+            <p><strong>Ochiq Portlar:</strong>
+                {% if open_ports %}{{ open_ports|join:", " }}{% else %}Portlar yopiq{% endif %}
+            </p>
+        </div>
+
+        <div class="score">
+            Xavfsizlik Reyting: {{ score }}/100
+        </div>
+
+        <form method="get" action="" class="check-form">
+            <input type="text" name="domain" placeholder="domain.com" required />
+            <button type="submit">Tekshirish</button>
+        </form>
+
+        <p class="footer-links">
+            <a href="{% url 'add_domain' %}">✉️ SSL ogohlantirish qo'shish</a> |
+            <a href="{% url 'domain_list' %}">📋 Ro'yxatni ko'rish</a>
+        </p>
+    </div>
+</body>
+</html>

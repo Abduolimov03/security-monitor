@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Domenlar Ro'yxati</title>
+    <link rel="stylesheet" href="{% static 'core/style.css' %}" />
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Email-xabarnoma uchun domenlar ro‘yxati</h1>
+
+        <ul class="domain-list">
+            {% for record in records %}
+                <li>
+                    <strong>{{ record.domain }}</strong>
+                    <span>{{ record.email }}</span>
+                </li>
+            {% empty %}
+                <li>Ro'yxat bo'sh</li>
+            {% endfor %}
+        </ul>
+
+        <p class="footer-links">
+            <a href="{% url 'add_domain' %}">✉️ SSL ogohlantirish qo'shish</a> |
+            <a href="{% url 'monitoring' %}">Monitoring sahifasiga qaytish</a>
+        </p>
+    </div>
+</body>
+</html>

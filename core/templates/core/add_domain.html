@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SSL Xabarnoma Qo'shish</title>
+    <link rel="stylesheet" href="{% static 'core/style.css' %}" />
+</head>
+<body>
+    <div class="container">
+        <h1>✉️ SSL Xabarnoma Qo‘shish</h1>
+
+        <form method="post" class="add-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Qo‘shish</button>
+        </form>
+
+        <p class="footer-links">
+            <a href="{% url 'domain_list' %}">📋 Ro‘yxatni ko‘rish</a> |
+            <a href="{% url 'monitoring' %}">Monitoring sahifasiga qaytish</a>
+        </p>
+    </div>
+</body>
+</html>
